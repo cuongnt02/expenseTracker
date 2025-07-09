@@ -50,6 +50,6 @@ class AddCommandTest {
         val result = addCommand.test("--amount 500000 --description 'Buffet'")
         assertEquals("", result.stderr)
         assertEquals(0, result.statusCode)
-        assertEquals("Spent 500000 on Buffet\n", result.stdout)
+        assertEquals("Spent 500000.0 on Buffet\n", result.stdout)
     }
 }
