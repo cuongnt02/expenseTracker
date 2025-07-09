@@ -23,7 +23,7 @@ object ExpenseTrack {
     init {
         try {
             json = readJSON("expenses.json".toPath())
-        } catch (e: FileNotFoundException) {
+        } catch (_: FileNotFoundException) {
             store()
             json = readJSON("expenses.json".toPath())
         } finally {
