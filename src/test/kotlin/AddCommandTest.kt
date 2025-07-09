@@ -28,8 +28,20 @@ class AddCommandTest {
     fun `should not add expense with negative amount`() {
         val addCommand = Add()
         val result = addCommand.test("--amount -100000.55 --description 'Got some money' --category='Nothing'")
-        assertNotEquals("", result.stderr)
         assertNotEquals(0, result.statusCode)
+    }
+
+    @Test
+    fun `should not add empty or blank desc`() {
+        val addCommand = Add()
+        var result = addCommand.test("--amount -100000.55 --description '  ' --category='Nothing'")
+        assertNotEquals(0, result.statusCode)
+        assertNotEquals("", result.stderr)
+        assertEquals("", result.stdout)
+        result = addCommand.test("--amount -100000.55 --description '  ' --category='Nothing'")
+        assertEquals("", result.stdout)
+        assertNotEquals(0, result.statusCode)
+        assertNotEquals("", result.stderr)
     }
 
     @Test
