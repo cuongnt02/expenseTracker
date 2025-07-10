@@ -2,16 +2,11 @@ package com.ntc.expenseTracker
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.associate
-import com.github.ajalt.clikt.parameters.options.check
 import com.github.ajalt.clikt.parameters.options.help
-import com.github.ajalt.clikt.parameters.options.multiple
 import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.pair
-import com.github.ajalt.clikt.parameters.options.split
 import com.github.ajalt.clikt.parameters.options.validate
 import com.github.ajalt.clikt.parameters.types.enum
 import com.github.ajalt.mordant.terminal.Terminal
-import com.ntc.expenseTracker.model.Expense
 import com.ntc.expenseTracker.model.ExpenseField
 import com.ntc.expenseTracker.utils.evaluatePredicate
 
