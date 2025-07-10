@@ -9,6 +9,7 @@ class ExpenseTracker: CliktCommand() {
         
         Available commands:
         add
+        view
     """.trimIndent()
     override fun run() {
         echo("")

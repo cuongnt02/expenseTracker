@@ -18,6 +18,7 @@ import okio.Path.Companion.toPath
 
 object ExpenseTrack {
     var expenses = listOf<Expense>()
+        private set
     var json = ""
 
     init {
@@ -40,7 +41,7 @@ object ExpenseTrack {
         writeJSON("expenses.json".toPath()) { Json.encodeToString(expenses) }
     }
 
-    fun view(): Table {
+    fun view(expenses: List<Expense>): Table {
         return table {
             borderType = SQUARE_DOUBLE_SECTION_SEPARATOR
             borderStyle = rgb("#4b25b9")
